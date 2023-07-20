@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Queries;
-using WebApplication1.Repositories;
+using WebApplication1.Application.Feature.Order.GetAllOrder;
 
 namespace WebApplication1.Controllers;
 
@@ -10,12 +9,10 @@ namespace WebApplication1.Controllers;
 public class OrderController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IOrderRepository _orderRepository;
 
-    public OrderController(IMediator mediator, IOrderRepository orderRepository)
+    public OrderController(IMediator mediator)
     {
         _mediator = mediator;
-        _orderRepository = orderRepository;
     }
 
     [HttpGet]

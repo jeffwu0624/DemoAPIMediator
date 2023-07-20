@@ -1,11 +1,6 @@
 ﻿using WebApplication1.Dtos;
 
-namespace WebApplication1.Repositories;
-
-public interface IOrderRepository
-{
-    Task<List<OrderDto>> GetOrdersAsync();
-}
+namespace WebApplication1.Application.Feature.Order.GetAllOrder;
 
 public class OrderRepository : IOrderRepository
 {

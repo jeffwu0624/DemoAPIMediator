@@ -1,9 +1,7 @@
 ﻿using MediatR;
 using WebApplication1.Dtos;
-using WebApplication1.Queries;
-using WebApplication1.Repositories;
 
-namespace WebApplication1.Handlers;
+namespace WebApplication1.Application.Feature.Order.GetAllOrder;
 
 public class GetAllOrderHandler : IRequestHandler<GetAllOrderQuery, List<OrderDto>>
 {
