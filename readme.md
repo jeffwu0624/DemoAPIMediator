@@ -1,1 +1,1 @@
-﻿### 參考CA架構並使用Mediator實作CQRS
+﻿### 參考Vertical Slice Architecture並使用Mediator實作CQRS
