@@ -5,16 +5,16 @@ namespace WebApplication1.Application.Feature.Order.GetAllOrder;
 
 public class GetAllOrderHandler : IRequestHandler<GetAllOrderQuery, List<OrderDto>>
 {
-    private readonly IOrderRepository _orderRepository;
+    private readonly IGetAllOrderRepository _getAllOrderRepository;
 
-    public GetAllOrderHandler(IOrderRepository orderRepository)
+    public GetAllOrderHandler(IGetAllOrderRepository getAllOrderRepository)
     {
-        _orderRepository = orderRepository;
+        _getAllOrderRepository = getAllOrderRepository;
     }
 
     public async Task<List<OrderDto>> Handle(GetAllOrderQuery request, CancellationToken cancellationToken)
     {
-        var orders = await _orderRepository.GetOrdersAsync();
+        var orders = await _getAllOrderRepository.GetOrdersAsync();
         
         return orders;
     }

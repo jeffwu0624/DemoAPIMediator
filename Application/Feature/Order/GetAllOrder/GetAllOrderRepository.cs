@@ -2,7 +2,7 @@
 
 namespace WebApplication1.Application.Feature.Order.GetAllOrder;
 
-public class OrderRepository : IOrderRepository
+public class GetAllOrderRepository : IGetAllOrderRepository
 {
     public Task<List<OrderDto>> GetOrdersAsync()
     {

@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+builder.Services.AddTransient<IGetAllOrderRepository, GetAllOrderRepository>();
 builder.Services.AddTransient<IGetOrderByIdRepository, GetOrderByIoRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
