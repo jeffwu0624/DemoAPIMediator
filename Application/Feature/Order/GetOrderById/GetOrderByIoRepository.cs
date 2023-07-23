@@ -7,6 +7,13 @@ public class GetOrderByIoRepository : IGetOrderByIdRepository
 {
     public Task<OrderDto> findByIdAsync(int requestOrderId)
     {
-        return Task.FromResult(MockOrderRepository.GetOrder().First(x => x.Id == requestOrderId));
+        var result = MockOrderRepository.GetOrder().First(x => x.Id == requestOrderId);
+        return result == null 
+            ? null
+            : Task.FromResult(new OrderDto
+            {
+                Id = result.Id,
+                Name = result.Name
+            });
     }
 }

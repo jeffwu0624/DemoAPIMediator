@@ -7,6 +7,10 @@ public class GetAllOrderRepository : IGetAllOrderRepository
 {
     public Task<List<OrderDto>> GetOrdersAsync()
     {
-        return Task.FromResult(MockOrderRepository.GetAll());
+        return Task.FromResult(MockOrderRepository.GetAll().Select(x => new OrderDto
+        {
+            Id = x.Id,
+            Name = x.Name
+        }).ToList());
     }
 }

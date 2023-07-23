@@ -4,5 +4,5 @@ namespace WebApplication1.Application.Feature.Order.CreateOrder;
 
 public interface ICreateOrderRepository
 {
-    Task CreateOrderAsync(OrderDto order);
+    Task CreateOrderAsync(Domain.Order order);
 }

@@ -14,7 +14,7 @@ public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, OrderDto>
 
     public async Task<OrderDto> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
     {
-        var order = new OrderDto()
+        var order = new Domain.Order()
         {
             Id = command.Id,
             Name = command.Name
@@ -22,6 +22,10 @@ public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, OrderDto>
         
         await _repository.CreateOrderAsync(order);
 
-        return order;
+        return new OrderDto()
+        {
+            Id = order.Id,
+            Name = order.Name
+        };
     }
 }
