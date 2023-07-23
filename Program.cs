@@ -1,4 +1,5 @@
 using System.Reflection;
+using WebApplication1.Application.Feature.Order.CreateOrder;
 using WebApplication1.Application.Feature.Order.GetAllOrder;
 using WebApplication1.Application.Feature.Order.GetOrderById;
 
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddTransient<IGetAllOrderRepository, GetAllOrderRepository>();
 builder.Services.AddTransient<IGetOrderByIdRepository, GetOrderByIoRepository>();
+builder.Services.AddTransient<ICreateOrderRepository, CreateOrderRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

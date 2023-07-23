@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Application.Feature.Order.CreateOrder;
 using WebApplication1.Application.Feature.Order.GetAllOrder;
 using WebApplication1.Application.Feature.Order.GetOrderById;
 
@@ -36,5 +37,13 @@ public class OrderController : ControllerBase
         return result != null
             ? Ok(result)
             : NotFound();
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> CreateOrder([FromBody]CreateOrderCommand command)
+    {
+        var result = await _mediator.Send(command);
+
+        return CreatedAtAction("GetOrderById", new { orderId = result.Id }, result);
     }
 }
