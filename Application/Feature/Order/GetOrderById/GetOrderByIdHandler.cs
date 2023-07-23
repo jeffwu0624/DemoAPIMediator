@@ -14,6 +14,6 @@ public class GetOrderByIdHandler : IRequestHandler<GetOrderByIdQuery, OrderDto>
     
     public async Task<OrderDto> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
     {
-        return await _repository.findById(request.OrderId);
+        return await _repository.findByIdAsync(request.OrderId);
     }
 }

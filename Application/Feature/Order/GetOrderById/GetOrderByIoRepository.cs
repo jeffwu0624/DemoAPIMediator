@@ -13,7 +13,7 @@ public class GetOrderByIoRepository : IGetOrderByIdRepository
         new OrderDto() { Id = 5, Name = "Order 5" },
     };
     
-    public Task<OrderDto> findById(int requestOrderId)
+    public Task<OrderDto> findByIdAsync(int requestOrderId)
     {
         return Task.FromResult(_orders.Find(x => x.Id == requestOrderId));
     }

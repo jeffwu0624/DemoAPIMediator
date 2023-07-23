@@ -4,5 +4,5 @@ namespace WebApplication1.Application.Feature.Order.GetOrderById;
 
 public interface IGetOrderByIdRepository
 {
-    Task<OrderDto> findById(int requestOrderId);
+    Task<OrderDto> findByIdAsync(int requestOrderId);
 }
